@@ -1,0 +1,102 @@
+/* TYPOGRAPHY */
+// This file defines all typography for the applications
+
+@use "sass:map"; // IMPORTING SASS MAP
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap"); // GOOGLE FONT CDN
+
+// FONT-FAMILY
+$font-family: "Roboto", sans-serif;
+
+// FONT-WEIGHTS
+$font-weights: (
+  "regular": 400,
+  "medium": 500,
+  "bold": 700,
+  "black": 900,
+);
+
+// FONT SIZES
+$font-sizes: (
+  "h1": 3.052rem,
+  // Heading 1
+  "h2": 2.441rem,
+  // Heading 2
+  "h3": 1.953rem,
+  // Heading 3
+  "h4": 1.563rem,
+  // Heading 4
+  "h5": 1.25rem,
+  // Heading 5
+  "h6": 1rem,
+  // Heading 6
+  "p": 1rem,
+  // Paragraph
+  "small": 0.8rem,
+);
+
+@function font-size($size: "p") {
+  @return map.get($font-sizes, $size);
+}
+
+@function font-weight($font-weight: "regular") {
+  @return map.get($font-weights, $font-weight);
+}
+
+@mixin h1($color: "text-dark") {
+  margin: 3rem 0 1.38rem;
+  margin-top: 0;
+  color: color($color: $color);
+  font-size: font-size($size: "h1") !important;
+  font-weight: font-weight($font-weight: "bold") !important;
+}
+
+@mixin h2($color: "text-dark") {
+  margin: 3rem 0 1.38rem;
+  color: color($color: $color);
+  font-size: font-size($size: "h2") !important;
+  font-weight: font-weight($font-weight: "bold") !important;
+}
+
+@mixin h3($color: "text-dark") {
+  margin: 3rem 0 1.38rem;
+  color: color($color: $color);
+  font-size: font-size($size: "h3") !important;
+  font-weight: font-weight($font-weight: "bold") !important;
+}
+
+@mixin h4($color: "text-dark") {
+  margin: 3rem 0 1.38rem;
+  color: color($color: $color);
+  font-size: font-size($size: "h4") !important;
+  font-weight: font-weight($font-weight: "bold") !important;
+  letter-spacing: 0.3rem;
+}
+
+@mixin h5($color: "text-dark") {
+  margin: 3rem 0 1.38rem;
+  color: color($color: $color);
+  font-size: font-size($size: "h5") !important;
+  font-weight: font-weight($font-weight: "bold") !important;
+  letter-spacing: 0.3rem;
+}
+
+@mixin h6($color: "text-dark") {
+  color: color($color: $color);
+  font-size: font-size($size: "h6") !important;
+  font-weight: font-weight($font-weight: "bold") !important;
+  letter-spacing: 0.3rem;
+}
+
+@mixin p($color: "text-dark", $font-weight: "regular") {
+  color: color($color: $color);
+  font-size: font-size($size: "p");
+  font-weight: font-weight($font-weight: $font-weight);
+  letter-spacing: 0.3rem;
+}
+
+@mixin a($font-weight: "bold", $size: "p") {
+  color: color($color: "link");
+  font-size: font-size($size: $size);
+  font-weight: font-weight($font-weight: $font-weight);
+  letter-spacing: 0.1rem;
+}

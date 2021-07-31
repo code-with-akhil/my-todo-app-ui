@@ -1,0 +1,27 @@
+@use "sass:map";
+
+/* COLORS */
+$custom-colors: (
+  "background": #ecf0f8,
+  "background-secondary": #f1f3f8,
+  "color1": #635ae9,
+  "color2": #63cff5,
+  "color3": #ff71dc,
+  "color4": #e95c4e,
+  "color5": #e8b730,
+  "color6": #635bd2,
+  "color7": #6082e3,
+  "text-dark": #030610,
+  "text-dark-secondary": #1b3357,
+  "text-dark-accent": #16214a,
+  "text-light": #f3f3f3,
+  "text-light-secondary": #b8b8b8,
+  "text-light-accent": #e0e0e0,
+  "white": #fff,
+  "black": #000,
+  "link": #59cdfe,
+);
+
+@function color($color: "primary") {
+  @return map.get($custom-colors, $color);
+}
